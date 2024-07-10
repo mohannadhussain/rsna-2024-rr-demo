@@ -3,7 +3,6 @@
 
 ```mermaid
 flowchart TD
-    flowchart TD
     Generator[Demo Generator] --> |1a DICOM| QveraIE[Qvera Interface Engine]
     Generator --> |1b DICOM| LaurelBridge
     
