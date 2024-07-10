@@ -15,17 +15,21 @@ flowchart TD
     LaurelBridge --> |3c DICOM| Fovia
     LaurelBridge --> |3d DICOM| ACRAssess
     
-    Icometrix --> |4a AI Results Format??| Fovia
-    Icometrix --> |4b AI Results Format??| ACRAssess
+    Icometrix --> |4a AI Results DICOM SR+SC| Fovia
+    Icometrix --> |4b AI Results DICOM SR+SC| ACRAssess
 
     Visage --> |5 Launch| Fovia
 
-    Fovia --> |6 Confirmed Results| LaurelBrdige
-    
-    LaurelBridge --> |7a Confirmed Results| Visage
-    LaurelBridge --> |7b Confirmed Results| NuancePS
-    LaurelBridge --> |7c Confirmed Results??| Epic
+    Fovia --> |6 Confirmed Results DICOM SR| Icometrix
+
+    Icometrix --> |7 Recalculated Scores DICOM SR+SC| LaurelBridge
+
+    LaurelBridge --> |8a ORU Confirmed Results| Visage
+    LaurelBridge --> |8b ORU Confirmed Results| NuancePS
+    LaurelBridge --> |8c ORU Confirmed Results| EpicRadiant
+    LaurelBridge --> |8d ORU Confirmed Results| ACRAssess
 
     NuancePS --> |8a ORU| Visage
     NuancePS --> |8b ORU| ACRAssess
+    NuancePS --> |8c ORU| EpicRadiant
 ```
