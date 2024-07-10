@@ -13,20 +13,29 @@ flowchart TD
     InterlinxIE --> |4a ORM| SmartReporting
     InterlinxIE --> |4b ORM| Paxera
 
-    InterlinxIE --> |5a DICOM| Paxera
-    InterlinxIE --> |5b DICOM| SiemensAIRC
-    InterlinxIE --> |5c DICOM| Fovia
-    InterlinxIE --> |5d DICOM| IBIS
-    InterlinxIE --> |5e DICOM| ACRAssess
+    InterlinxIE --> |5 FHIR Observation - PSA Value| HAPI_FHIR
+
+    InterlinxIE --> |6a DICOM| Paxera
+    InterlinxIE --> |6b DICOM| SiemensAIRC
+    InterlinxIE --> |6c DICOM| Fovia
+    InterlinxIE --> |6d DICOM| IBIS
+    InterlinxIE --> |6e DICOM| ACRAssess
+
+    Fovia --> |7 Query for PSA Value| HAPI_FHIR
     
-    SiemensAIRC --> |6 AI Results Format??| Fovia
+    SiemensAIRC --> |8 AI Results DICOM SR| Fovia
 
-    Fovia --> |7 Confirmed results| InterlinxAIO[Interlinx AI Orchestrator]
+    Paxera --> |9 Launch| Fovia
 
-    InterlinxAIO --> |8a Confirmed Results| Paxera
-    InterlinxAIO --> |8b Confirmed Results| SmartReporting
-    InterlinxAIO --> |8c FHIR Confirmed Results| ACRAssess
+    Fovia --> |10 Confirmed Results DICOM SR| InterlinxAIO[Interlinx AI Orchestrator]
 
-    SmartReporting --> |9a ORU| Paxera
-    SmartReporting --> |9b FHIR DR| ACRAssess
+    InterlinxAIO --> |11 Confirmed Results DICOM SR| Paxera
+    
+    InterlinxAIO --> |12a Confirmed Results FHIR| SmartReporting
+    InterlinxAIO --> |12b Confirmed Results FHIR| ACRAssess
+
+    Paxera --> |13 Launch| SmartReporting
+
+    SmartReporting --> |14a ORU| Paxera
+    SmartReporting --> |14b FHIR DiagnosticReport| ACRAssess
 ```
