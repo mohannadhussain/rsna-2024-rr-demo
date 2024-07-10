@@ -21,8 +21,8 @@ flowchart TD
 
     Fovia --> |6 Confirmed Results DICOM SR| LaurelBridge
 
-    LaurelBridge --> |7a Confirmed Results| Visage
-    LaurelBridge --> |7b Confirmed Results| Milvue
+    LaurelBridge --> |7a Confirmed Results DICOM SR| Visage
+    LaurelBridge --> |7b Confirmed Results DICOM SR| Milvue
     
     Milvue --> |8a AI Report ORU| LaurelBridge
     
@@ -30,6 +30,7 @@ flowchart TD
     LaurelBridge --> |9b AI Report ORU| NuancePS
     LaurelBridge --> |9c AI Report ORU| Visage
 
-    NuancePS --> |10a ORU| Visage
-    NuancePS --> |10b ORU| ACRAssess
+    NuancePS --> |10a Signed Report ORU| Visage
+    NuancePS --> |10b Signed Report ORU| ACRAssess
+    NuancePS --> |10c Signed Report ORU| EpicRadiant
 ```
