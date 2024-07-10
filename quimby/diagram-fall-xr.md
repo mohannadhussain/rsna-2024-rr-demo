@@ -3,6 +3,7 @@
 
 ```mermaid
 flowchart TD
+    flowchart TD
     Generator[Demo Generator] --> |1a DICOM| QveraIE[Qvera Interface Engine]
     Generator --> |1b DICOM| LaurelBridge
     
@@ -16,18 +17,20 @@ flowchart TD
     LaurelBridge --> |3d DICOM| ACRAssess
     
     Milvue --> |4a AI Results DICOM SR| Fovia    
+
     Visage --> |5 Launch| Fovia
 
-    Fovia --> |6 Confirmed Results| LaurelBridge
+    Fovia --> |6 Confirmed Results DICOM SR| LaurelBridge
 
     LaurelBridge --> |7a Confirmed Results| Visage
     LaurelBridge --> |7b Confirmed Results| Milvue
     
-    Milvue --> |8a AI Report ORU | NuancePS
+    Milvue --> |8a AI Report ORU| LaurelBridge
+    
+    LaurelBridge --> |9a AI Report ORU| ACRAssess
+    LaurelBridge --> |9b AI Report ORU| NuancePS
+    LaurelBridge --> |9c AI Report ORU| Visage
 
-    LaurelBridge --> |9a Confirmed Results| NuancePS
-    LaurelBridge --> |9b Confirmed Results| ACRAssess
-   
     NuancePS --> |10a ORU| Visage
     NuancePS --> |10b ORU| ACRAssess
 ```
