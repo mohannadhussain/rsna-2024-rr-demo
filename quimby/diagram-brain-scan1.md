@@ -2,7 +2,7 @@
 ## Brain Scan 1 (Siemens AIRC)
 
 ```mermaid
-flowchart TD
+flowchart LR
     Generator[Demo Generator] --> |1a DICOM| QveraIE[Qvera Interface Engine]
     Generator --> |1b DICOM| LaurelBridge
 
@@ -15,17 +15,14 @@ flowchart TD
     LaurelBridge --> |3c DICOM| Fovia
     LaurelBridge --> |3d DICOM| ACRAssess
     
-    SiemensAIRC --> |4a AI Results Format??| Fovia
-    SiemensAIRC --> |4b AI Results Format??| ACRAssess
-
-    Visage --> |5 Launch| Fovia
-
-    Fovia --> |6 Confirmed Results| LaurelBrdige
+    SiemensAIRC --> |4 AI Results DICOM SR+SC| LaurelBridge
     
-    LaurelBridge --> |7a Confirmed Results| Visage
-    LaurelBridge --> |7b Confirmed Results| NuancePS
-    LaurelBridge --> |7c Confirmed Results??| Epic
+    LaurelBridge --> |5 AI Results DICOM SR+SC| Visage
+    
+    LaurelBridge --> |6a AI Results ORU| NuancePS
+    LaurelBridge --> |6b AI Results ORU| ACRAssess
 
-    NuancePS --> |8a ORU| Visage
-    NuancePS --> |8b ORU| ACRAssess
+    NuancePS --> |7a ORU| Visage
+    NuancePS --> |7b ORU| ACRAssess
+    NuancePS --> |7c ORU| EpicRadiant
 ```
