@@ -15,17 +15,21 @@ flowchart TD
     LaurelBridge --> |3c DICOM| Fovia
     LaurelBridge --> |3d DICOM| ACRAssess
     
-    SiemensAIRC --> |4a AI Results Format??| Fovia
-    SiemensAIRC --> |4b AI Results Format??| ACRAssess
+    SiemensAIRC --> |4a AI Results DICOM SR| Fovia
+    SiemensAIRC --> |4b AI Results DICOM SR| LaurelBridge
 
-    Visage --> |5 Launch| Fovia
+    LaurelBridge --> |5a Worklist Prioritization| EpicRadiant
+    LaurelBridge --> |5a AI Results ORU| ACRAssess
 
-    Fovia --> |6 Confirmed Results| LaurelBrdige
+    Visage --> |6 Launch| Fovia
+
+    Fovia --> |7 Confirmed Results| LaurelBridge
     
-    LaurelBridge --> |7a Confirmed Results| Visage
-    LaurelBridge --> |7b Confirmed Results| NuancePS
-    LaurelBridge --> |7c Confirmed Results??| Epic
+    LaurelBridge --> |8a Confirmed Results| Visage
+    LaurelBridge --> |8b Confirmed Results| NuancePS
+    LaurelBridge --> |9c Confirmed Results | EpicRadiant
 
-    NuancePS --> |8a ORU| Visage
-    NuancePS --> |8b ORU| ACRAssess
+    NuancePS --> |9a ORU| Visage
+    NuancePS --> |9b ORU| ACRAssess
+    NuancePS --> |9c ORU| EpicRadiant
 ```
