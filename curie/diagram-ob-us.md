@@ -11,6 +11,7 @@ flowchart TD
     QveraIE --> |2d DICOM| SiemensSyngo
     QveraIE --> |2e DICOM| Biotics
     QveraIE --> |2f DICOM| Fovia
+    QveraIE --> |2g DICOM| ACRAssess
     
     Biotics --> |3 AI Results Format??| QveraAIO[Qvera AI Orchestrator]
 
