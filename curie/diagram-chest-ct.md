@@ -12,6 +12,7 @@ flowchart TD
     QveraIE --> |2e DICOM| Fovia
     QveraIE --> |2f DICOM| TBD
     QveraIE --> |2g DICOM| HOPPR
+    QveraIE --> |2h DICOM| ACRAssess
     
     TBD --> |3 AI Results Format??| QveraAIO[Qvera AI Orchestrator]
 
