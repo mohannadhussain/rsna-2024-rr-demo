@@ -28,8 +28,10 @@ flowchart TD
     Fovia --> |6b Confirmed Results| SmartReporting
     Fovia --> |6c FHIR Confirmed Results| ACRAssess
     Fovia --> |6d Confirmed Results| IRM
+    Fovia --> |6e DICOM Confirmed Results| QveraIE
 
     SmartReporting --> |6a ORU| SiemensSyngo
     SmartReporting --> |6b ORU| PocketHealth
     SmartReporting --> |6c FHIR DR| ACRAssess
+    QveraIE --> |6d FHIRcast AI Result| EpicRadiant
 ```
