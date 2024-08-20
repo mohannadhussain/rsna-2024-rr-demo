@@ -8,30 +8,34 @@ flowchart TD
     QveraIE --> |2a ORM| EpicRadiant
     QveraIE --> |2b ORM| SmartReporting
     QveraIE --> |2c ORM| SiemensSyngo
-    QveraIE --> |2d DICOM| SiemensSyngo
-    QveraIE --> |2e DICOM| Fovia
-    QveraIE --> |2f DICOM| TBD
-    QveraIE --> |2g DICOM| HOPPR
-    QveraIE --> |2h DICOM| ACRAssess
-    QveraIE --> |2i ORM| IRM
-    QveraIE --> |2j DICOM| IRM
+    QveraIE --> |2d ORM| IRM
+    QveraIE --> |2d DICOM| IRM
+    QveraIE --> |2e DICOM| SiemensSyngo
+    QveraIE --> |2f DICOM| Fovia
+    QveraIE --> |2g DICOM| SiemensAIRC
+    QveraIE --> |2h DICOM| HOPPR
+    QveraIE --> |2i DICOM| ACRAssess
+    QveraIE --> |2k DICOM| PocketHealth
     
-    TBD --> |3 AI Results Format??| QveraAIO[Qvera AI Orchestrator]
     
-    HOPPR --> |4 AI Results Format??| QveraAIO
+    SiemensAIRC --> |3 AI Results DICOM SR| QveraAIO[Qvera AI Orchestrator]
+    HOPPR --> |4 AI Results DICOM SR| QveraAIO
     
-    QveraAIO --> |5a Worklist Prioritization| SiemensSyngo
+    QveraAIO --> |5a Worklist Prioritization| EpicRadiant
     QveraAIO --> |5b AI Results| Fovia
     QveraAIO --> |5c AI Results| IRM
 
-    Fovia --> |6a Confirmed Results| SiemensSyngo
-    Fovia --> |6b Confirmed Results| SmartReporting
-    Fovia --> |6c FHIR Confirmed Results| ACRAssess
-    Fovia --> |6d Confirmed Results| IRM
-    Fovia --> |6e DICOM Confirmed Results| QveraIE
+    Fovia --> |6a DICOM Confirmed Results| SiemensSyngo
+    Fovia --> |6b DICOM Confirmed Results| IRM
+    Fovia --> |6c DICOM Confirmed Results| QveraIE
+    Fovia --> |6d DICOM Confirmed Results| PocketHealth
+    Fovia --> |6d FHIR Confirmed Results| ACRAssess
+    Fovia --> |6e FHIR Confirmed Results| SmartReporting
 
-    SmartReporting --> |6a ORU| SiemensSyngo
-    SmartReporting --> |6b ORU| PocketHealth
-    SmartReporting --> |6c FHIR DR| ACRAssess
-    QveraIE --> |6d FHIRcast AI Result| EpicRadiant
+    QveraIE --> |7 FHIRcast AI Result| EpicRadiant
+
+    SmartReporting --> |8a MDM| SiemensSyngo
+    SmartReporting --> |8b ORU| PocketHealth
+    SmartReporting --> |8c FHIR DiagnosticReport| ACRAssess
+    
 ```
