@@ -24,12 +24,14 @@ flowchart TD
 
     Icometrix --> |7 Recalculated Scores DICOM SR+SC| LaurelBridge
 
-    LaurelBridge --> |8a ORU Confirmed Results| Visage
-    LaurelBridge --> |8b ORU Confirmed Results| NuancePS
-    LaurelBridge --> |8c ORU Confirmed Results| EpicRadiant
-    LaurelBridge --> |8d ORU Confirmed Results| ACRAssess
+    LaurelBridge --> |8 Updated DICOM SR+SC| Visage
 
-    NuancePS --> |8a ORU| Visage
-    NuancePS --> |8b ORU| ACRAssess
-    NuancePS --> |8c ORU| EpicRadiant
+    Visage --> |9a FHIR Results over FHIRcast| EpicRadiant
+    Visage --> |9b FHIR Results over FHIRcast| NuancePS
+
+    LaurelBridge --> |10 ORU Confirmed Results| ACRAssess
+
+    NuancePS --> |11a ORU| Visage
+    NuancePS --> |11b ORU| ACRAssess
+    NuancePS --> |11c ORU| EpicRadiant
 ```
