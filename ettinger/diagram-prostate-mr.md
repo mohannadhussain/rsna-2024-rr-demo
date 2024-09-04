@@ -35,5 +35,7 @@ flowchart TD
     Paxera --> |12 Launch| SmartReporting
 
     SmartReporting --> |13a ORU| Paxera
-    SmartReporting --> |13b FHIR DiagnosticReport| ACRAssess
+    SmartReporting --> |13b FHIR DiagnosticReport| InterlinxAIO
+
+    InterlinxAIO --> |14 FHIR DiagnosticReport| ACRAssess
 ```
