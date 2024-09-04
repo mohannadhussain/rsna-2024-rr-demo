@@ -23,6 +23,8 @@ flowchart LR
     LaurelBridge --> |6b AI Results ORU| ACRAssess
 
     NuancePS --> |7a ORU| Visage
-    NuancePS --> |7b ORU| ACRAssess
+    NuancePS --> |7b ORU| LaurelBridge
     NuancePS --> |7c ORU| EpicRadiant
+
+    LaurelBridge --> |8 ORU| ACRAssess
 ```
