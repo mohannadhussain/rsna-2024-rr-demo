@@ -29,5 +29,7 @@ flowchart TD
     
     SmartReporting --> |6a ORU| SiemensSyngo
     SmartReporting --> |6b ORU| PocketHealth
-    SmartReporting --> |6c FHIR DR| ACRAssess
+    SmartReporting --> |6c FHIR DiagnosticReport| QveraAIO
+
+    QveraAIO --> |7 FHIR DiagnosticReport| ACRAssess  
 ```
