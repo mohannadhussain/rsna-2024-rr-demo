@@ -31,6 +31,8 @@ flowchart TD
     LaurelBridge --> |9c AI Report ORU| Visage
 
     NuancePS --> |10a Signed Report ORU| Visage
-    NuancePS --> |10b Signed Report ORU| ACRAssess
+    NuancePS --> |10b Signed Report ORU| LaurelBridge
     NuancePS --> |10c Signed Report ORU| EpicRadiant
+
+    LaurelBridge --> |11 Signed Report ORU| ACRAssess
 ```
