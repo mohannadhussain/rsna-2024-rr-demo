@@ -32,6 +32,8 @@ flowchart TD
     LaurelBridge --> |10 ORU Confirmed Results| ACRAssess
 
     NuancePS --> |11a ORU| Visage
-    NuancePS --> |11b ORU| ACRAssess
+    NuancePS --> |11b ORU| LaurelBridge
     NuancePS --> |11c ORU| EpicRadiant
+
+    LaurelBridge --> |12 ORU| ACRAssess
 ```
