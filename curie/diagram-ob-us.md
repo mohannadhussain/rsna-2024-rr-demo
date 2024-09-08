@@ -15,7 +15,6 @@ flowchart TD
     QveraIE --> |2g DICOM| Fovia
     QveraIE --> |2h DICOM| ACRAssess
     QveraIE --> |2i DICOM| IRM
-    QveraIE --> |2j DICOM| PocketHealth
     
     Biotics --> |3a AI Results DICOM SR| QveraAIO[Qvera AI Orchestrator]
 
@@ -24,12 +23,10 @@ flowchart TD
     QveraAIO --> |5a DICOM Confirmed Results| SiemensSyngo
     QveraAIO --> |5b DICOM Confirmed Results| SmartReporting
     QveraAIO --> |5c DICOM Confirmed Results| IRM
-    QveraAIO --> |5d DICOM Confirmed Results| PocketHealth
-    QveraAIO --> |5e FHIR Confirmed Results| ACRAssess
+    QveraAIO --> |5d FHIR Confirmed Results| ACRAssess
     
     SmartReporting --> |6a ORU| SiemensSyngo
-    SmartReporting --> |6b ORU| PocketHealth
-    SmartReporting --> |6c FHIR DiagnosticReport| QveraAIO
+    SmartReporting --> |6b FHIR DiagnosticReport| QveraAIO
 
     QveraAIO --> |7 FHIR DiagnosticReport| ACRAssess  
 ```
