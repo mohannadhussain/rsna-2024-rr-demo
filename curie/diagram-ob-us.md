@@ -21,8 +21,8 @@ flowchart TD
     QveraAIO --> |4a Notification?!?| EpicRadiant
 
     QveraAIO --> |5a DICOM Confirmed Results| SiemensSyngo
-    QveraAIO --> |5b DICOM Confirmed Results| SmartReporting
-    QveraAIO --> |5c DICOM Confirmed Results| IRM
+    QveraAIO --> |5b DICOM Confirmed Results| IRM
+    QveraAIO --> |5c FHIR Confirmed Results| SmartReporting
     QveraAIO --> |5d FHIR Confirmed Results| ACRAssess
     
     SmartReporting --> |6a ORU| SiemensSyngo
