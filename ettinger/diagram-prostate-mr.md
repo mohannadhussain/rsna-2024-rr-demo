@@ -10,14 +10,14 @@ flowchart TD
 
     InterlinxIE --> |3a ORM| SmartReporting
     InterlinxIE --> |3b ORM| Paxera
+    InterlinxIE --> |3c ORM| PocketHealth
 
     InterlinxIE --> |4 FHIR Resources for GE| HAPI_FHIR
 
     InterlinxIE --> |5a DICOM| Paxera
     InterlinxIE --> |5b DICOM| SiemensAIRC
     InterlinxIE --> |5c DICOM| Fovia
-    InterlinxIE --> |5d DICOM| IBIS
-    InterlinxIE --> |5e DICOM| ACRAssess
+    InterlinxIE --> |5d DICOM| ACRAssess
 
     SiemensAIRC --> |6 AI Results DICOM SR| Fovia
 
@@ -35,7 +35,10 @@ flowchart TD
     Paxera --> |12 Launch| SmartReporting
 
     SmartReporting --> |13a ORU| Paxera
-    SmartReporting --> |13b FHIR DiagnosticReport| InterlinxAIO
+    SmartReporting --> |13b ORU| PocketHealth
+    SmartReporting --> |13c FHIR DiagnosticReport| InterlinxAIO
 
     InterlinxAIO --> |14 FHIR DiagnosticReport| ACRAssess
+
+    PocketHealth --> |15 DICOM Q/R| Paxera
 ```
