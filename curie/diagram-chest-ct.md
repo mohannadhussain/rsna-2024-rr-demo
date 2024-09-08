@@ -14,7 +14,6 @@ flowchart TD
     QveraIE --> |2f DICOM| Fovia
     QveraIE --> |2g DICOM| SiemensAIRC
     QveraIE --> |2i DICOM| ACRAssess
-    QveraIE --> |2k DICOM| PocketHealth
 
     Fovia --> |3 DICOM| HOPPR
 
@@ -29,7 +28,6 @@ flowchart TD
     Fovia --> |6a DICOM Confirmed Results| SiemensSyngo
     Fovia --> |6b DICOM Confirmed Results| IRM
     Fovia --> |6c DICOM Confirmed Results| QveraIE
-    Fovia --> |6d DICOM Confirmed Results| PocketHealth
     Fovia --> |6d FHIR Confirmed Results| ACRAssess
     Fovia --> |6e FHIR Confirmed Results| SmartReporting
     HOPPR --> |6f Chat iframe| Fovia
@@ -37,8 +35,7 @@ flowchart TD
     QveraIE --> |7 FHIRcast AI Result| EpicRadiant
 
     SmartReporting --> |8a MDM| SiemensSyngo
-    SmartReporting --> |8b ORU| PocketHealth
-    SmartReporting --> |8c FHIR DiagnosticReport| QveraAIO
+    SmartReporting --> |8b FHIR DiagnosticReport| QveraAIO
 
     QveraAIO --> |9 FHIR DiagnosticReport| ACRAssess  
 ```
