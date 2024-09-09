@@ -27,14 +27,14 @@ flowchart TD
     
     Fovia --> |6a DICOM Confirmed Results| SiemensSyngo
     Fovia --> |6b DICOM Confirmed Results| IRM
-    Fovia --> |6c DICOM Confirmed Results| QveraIE
+    Fovia --> |6c DICOM Confirmed Results| QveraAIO
 
     HOPPR --> |7 Chat iframe| Fovia
 
-    Qvera --> |8a FHIR Confirmed Results| ACRAssess
-    Qvera --> |8b FHIR Confirmed Results| SmartReporting
+    QveraAIO --> |8a FHIR Confirmed Results| ACRAssess
+    QveraAIO --> |8b FHIR Confirmed Results| SmartReporting
 
-    QveraIE --> |9 FHIRcast AI Result| EpicRadiant
+    QveraAIO --> |9 FHIRcast AI Result| EpicRadiant
 
     SmartReporting --> |10a MDM| SiemensSyngo
     SmartReporting --> |10b FHIR DiagnosticReport| QveraAIO
