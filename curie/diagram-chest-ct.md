@@ -19,9 +19,9 @@ flowchart TD
 
     Fovia --> |4a LLM Report request| HOPPR
     HOPPR --> |4b Report response JSON| Fovia
-    SiemensAIRC --> |4c AI Results DICOM SR| QveraAIO[Qvera AI Orchestrator]
+    SiemensAIRC --> |4c AI Results DICOM SR| Fovia
     
-    QveraAIO --> |5a Worklist Prioritization| EpicRadiant
+    QveraAIO[Qvera AI Orchestrator] --> |5a Worklist Prioritization| EpicRadiant
     QveraAIO --> |5b AI Results| Fovia
     QveraAIO --> |5c AI Results| IRM
     
