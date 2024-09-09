@@ -12,24 +12,18 @@ flowchart LR
  
     LaurelBridge --> |3a DICOM| Visage
     LaurelBridge --> |3b DICOM| SiemensAIRC
-    LaurelBridge --> |3c DICOM| Fovia
-    LaurelBridge --> |3d DICOM| ACRAssess
+    LaurelBridge --> |3c DICOM| ACRAssess
    
-    SiemensAIRC --> |4a AI Results DICOM SR+SC| LaurelBridge
-    SiemensAIRC --> |4b AI Results DICOM SR+SC| Fovia
+    SiemensAIRC --> |4 AI Results DICOM SR+SC| LaurelBridge
  
-    Visage --> |5 Launch| Fovia
- 
-    Fovia --> |6 Confirmed Results DICOM SR+SC| LaurelBridge
+    LaurelBridge --> |5 AI Results| Visage
    
-    LaurelBridge --> |7 Confirmed AI Results DICOM SR+SC| Visage
-   
-    LaurelBridge --> |8a AI Results ORU| NuancePS
-    LaurelBridge --> |8b AI Results ORU| ACRAssess
+    LaurelBridge --> |6a AI Results ORU| NuancePS
+    LaurelBridge --> |6b AI Results ORU| ACRAssess
  
-    NuancePS --> |9a ORU| Visage
-    NuancePS --> |9b ORU| LaurelBridge
-    NuancePS --> |9c ORU| EpicRadiant
+    NuancePS --> |7a ORU| Visage
+    NuancePS --> |7b ORU| LaurelBridge
+    NuancePS --> |7c ORU| EpicRadiant
  
-    LaurelBridge --> |10 ORU| ACRAssess
+    LaurelBridge --> |8 ORU| ACRAssess
 ```
