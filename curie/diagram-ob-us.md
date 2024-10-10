@@ -18,15 +18,13 @@ flowchart TD
     
     Biotics --> |3a AI Results DICOM SR| QveraAIO[Qvera AI Orchestrator]
 
-    QveraAIO --> |4a Notification?!?| EpicRadiant
-
-    QveraAIO --> |5a DICOM Confirmed Results| SiemensSyngo
-    QveraAIO --> |5b DICOM Confirmed Results| IRM
-    QveraAIO --> |5c FHIR Confirmed Results| SmartReporting
-    QveraAIO --> |5d FHIR Confirmed Results| ACRAssess
+    QveraAIO --> |4a DICOM Confirmed Results| SiemensSyngo
+    QveraAIO --> |4b DICOM Confirmed Results| IRM
+    QveraAIO --> |4c FHIR Confirmed Results| SmartReporting
+    QveraAIO --> |4d FHIR Confirmed Results| ACRAssess
     
-    SmartReporting --> |6a ORU| SiemensSyngo
-    SmartReporting --> |6b FHIR DiagnosticReport| QveraAIO
+    SmartReporting --> |5a ORU| SiemensSyngo
+    SmartReporting --> |5b FHIR DiagnosticReport| QveraAIO
 
-    QveraAIO --> |7 FHIR DiagnosticReport| ACRAssess  
+    QveraAIO --> |6 FHIR DiagnosticReport| ACRAssess  
 ```
