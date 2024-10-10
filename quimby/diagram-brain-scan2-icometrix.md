@@ -16,7 +16,8 @@ flowchart TD
     LaurelBridge --> |3d DICOM| ACRAssess
     
     Icometrix --> |4a AI Results DICOM SR+SC| Fovia
-    Icometrix --> |4b AI Results DICOM SR+SC| ACRAssess
+    Icometrix --> |4b AI Results DICOM SR| LaurelBridge
+    LaurelBridge --> |4c ORU Initial Results| ACRAssess
 
     Visage --> |5 Launch| Fovia
 
